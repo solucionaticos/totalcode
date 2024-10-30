@@ -73,8 +73,8 @@ TABLA DE CONTENIDOS
 
     Clona este repositorio:
 
-        git clone git@github.com:solucionaticos/TotalCodeTest.git
-        cd TotalCodeTest
+        git clone git@github.com:solucionaticos/totalcode.git
+        cd totalcode
 
     NOTA: 
         Puedes definir el nombre de la carpeta del proyecto como desees, y este mismo nombre debes definirlo en js/report.js con la constante pathProject
