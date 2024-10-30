@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos básicos para el documento HTML -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP - Tienda Rosatel - Clientes que han ordenado en la tienda</title>
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Librería jQuery para funciones JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="bg-grey">
+
+    <!-- Contenedor principal de la página -->
+    <div class="container-fluid">
+
+        <!-- Encabezado con logo, título y botón de salida -->
+        <div class="row bg-white mt-0 mb-10 h-header h-shadow">
+            <div class="col-2 p-3">
+                <!-- Logo de la empresa -->
+                <img src="images/logo-total.png" alt="Logo TotalCode" class="img-logo">
+            </div>
+            <div class="col-8 text-center text-fuccia text-bold text-uppercase text-vcenter-center">
+                <!-- Titulo del reporte -->
+                ERP - Tienda Rosatel
+            </div>
+            <div class="col-2 text-right text-grey text-uppercase text-bold text-vcenter-right log-out">
+                <!-- Opción de salir -->
+                Salir <i class="fa fa-power-off log-out"></i>
+            </div>
+        </div>
+
+        <!-- Contenedor secundario para el contenido del reporte -->
+        <div class="container">
+            
+            <div class="row bg-white rounded p-5">
+                <div class="col">
+
+                    <!-- Título de la sección de reporte -->
+                    <div class="row">
+                        <div class="col">
+                            <h3 class="text-grey-dark">Clientes que han ordenado en la tienda</h3>
+                        </div>
+                    </div>
+
+                    <!-- Filtros del reporte -->
+                    <div class="row text-vcenter mb-5">
+                        <div class="col-1-5">
+                            <span class="text-grey p-0-15">Filtros:</span>
+                        </div>
+                        <!-- Filtro por mes de la orden -->
+                        <div class="col-3">
+                            <label for="month" class="text-fuccia">Mes:</label>
+                            <select id="month" class="border-fuccia rounded bg-grey filter select-fuccia">
+                                <option value="">Todos</option>
+                                <option value="1">ENERO</option>
+                                <option value="2">FEBRERO</option>
+                                <option value="3">MARZO</option>
+                                <option value="4">ABRIL</option>
+                                <option value="5">MAYO</option>
+                                <option value="6">JUNIO</option>
+                                <option value="7">JULIO</option>
+                                <option value="8">AGOSTO</option>
+                                <option value="9">SEPTIEMBRE</option>
+                                <option value="10">OCTUBRE</option>
+                                <option value="11">NOVIEMBRE</option>
+                                <option value="12">DICIEMBRE</option>
+                            </select>
+                        </div>
+                        <!-- Filtro por estado de la orden -->
+                        <div class="col-3">
+                            <label for="status" class="text-fuccia">Estado:</label>
+                            <select id="status" class="border-fuccia rounded bg-grey filter select-fuccia">
+                                <option value="">Todos</option>
+                                <option value="0">Abiertas</option>
+                                <option value="3">Enviadas</option>
+                                <option value="4">Entregadas</option>
+                            </select>
+                        </div>                        
+
+                        <!-- Espacio vacío para separación -->
+                        <div class="col-2"></div>
+
+                        <!-- Muestra el número de registros filtrados -->
+                        <div class="col-2-5 text-right">
+                            <span class="text-grey">Registros (<span class="text-bold" id="numRegistros">0</span>)</span>
+                        </div>
+                    </div>
+
+                    <!-- Tabla de datos del reporte -->
+                    <div class="row">
+                        <div class="col">
+                            <!-- Contenedor de la tabla de órdenes -->
+                            <div class="table-contour">
+                                <table class="table rounded">
+                                    <thead>
+                                        <tr class="bg-fuccia text-white text-uppercase">
+                                            <!-- Encabezados de la tabla -->
+                                            <th class="w-15"></th>
+                                            <th>Cliente</th>
+                                            <th>Número de Órdenes</th>
+                                            <th>Monto ($ COP)</th>
+                                            <th class="w-15"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="orderTable" class="text-grey"></tbody>
+                                    <tfoot>
+                                        <!-- Fila para los totales de la tabla -->
+                                        <tr class="text-grey-dark text-uppercase">
+                                            <th class="w-15"></th>
+                                            <th class="text-right">Total</th>
+                                            <th class="text-left" id="totalNumOrders">0</th>
+                                            <th class="text-left" id="totalOrders">$ 0</th>
+                                            <th class="w-15"></th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script para cargar y manejar los datos del reporte -->
+    <script src="js/report.js"></script>
+
+</body>
+</html>
